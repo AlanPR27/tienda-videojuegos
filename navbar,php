@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.php">GameStore 🎮</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.php">Inicio</a>
+                <a class="nav-link" href="catalogo.php">Catálogo</a>
+                <a class="nav-link" href="login.php">Login</a>
+                <a class="nav-link" href="registro.php">Registro</a>
+                <a class="nav-link" href="carrito.php">Carrito</a>
+                <a class="nav-link" href="admin.php">Admin</a>
+            </div>
+        </div>
+    </div>
+</nav>
