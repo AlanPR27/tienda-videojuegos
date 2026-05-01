@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - GameStore</title>
+    <title>Inicio - Tienda Alan</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@ session_start();
     <!-- Contenido principal -->
     <div class="container mt-5">
         <div class="container-box text-center">
-            <h1 class="mb-3">Bienvenido a GameStore 🎮</h1>
+            <h1 class="mb-3">Bienvenido a la Tienda de Alan</h1>
             <p class="lead">
                 Tu tienda en línea de videojuegos, consolas y accesorios.
             </p>
