@@ -2,35 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - GameStore</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
 
 <?php include("navbar.php"); ?>
 
 <div class="container mt-5">
     <div class="container-box">
-        <h2>Inicio de Sesión</h2>
+        <h2>Inicio de sesión</h2>
 
-        <form>
+        <form action="validar_login.php" method="post">
             <div class="mb-3">
                 <label>Correo</label>
-                <input type="email" class="form-control">
+                <input type="email" name="correo" class="form-control">
             </div>
 
             <div class="mb-3">
                 <label>Contraseña</label>
-                <input type="password" class="form-control">
+                <input type="password" name="contrasena" class="form-control">
             </div>
 
-            <button class="btn btn-primary">Ingresar</button>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
         </form>
-
     </div>
 </div>
 
