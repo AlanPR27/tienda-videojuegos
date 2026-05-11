@@ -1,5 +1,9 @@
 <?php
-include("conexion.php");
+$conexion = mysqli_connect("db", "root", "root_password", "tienda_videojuegos");
+
+if (!$conexion) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
 
 $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
@@ -16,10 +20,8 @@ if ($nombre == "" || $correo == "" || $contrasena == "" || $fecha == "" || $tarj
     exit();
 }
 
-$contrasena_segura = password_hash($contrasena, PASSWORD_DEFAULT);
-
 $sql = "INSERT INTO usuarios (nombre, correo, contrasena, fecha_nacimiento, tarjeta, direccion)
-        VALUES ('$nombre', '$correo', '$contrasena_segura', '$fecha', '$tarjeta', '$direccion')";
+        VALUES ('$nombre', '$correo', '$contrasena', '$fecha', '$tarjeta', '$direccion')";
 
 if (mysqli_query($conexion, $sql)) {
     echo "<script>

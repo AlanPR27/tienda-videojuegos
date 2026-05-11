@@ -1,6 +1,10 @@
 <?php
 session_start();
-include("conexion.php");
+
+$conexion = mysqli_connect("db", "root", "root_password", "tienda_videojuegos");
+if (!$conexion) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
 
 if (!isset($_SESSION["id_usuario"])) {
     echo "<script>alert('Primero inicia sesión'); window.location='login.php';</script>";
@@ -23,14 +27,13 @@ if (mysqli_num_rows($resultado_carrito) > 0) {
     $id_carrito = mysqli_insert_id($conexion);
 }
 
-$sql_producto = "SELECT * FROM carrito_detalle 
+$sql_producto = "SELECT * FROM carrito_detalle
                  WHERE id_carrito = $id_carrito AND id_producto = $id_producto";
-
 $resultado_producto = mysqli_query($conexion, $sql_producto);
 
 if (mysqli_num_rows($resultado_producto) > 0) {
-    $sql = "UPDATE carrito_detalle 
-            SET cantidad = cantidad + $cantidad 
+    $sql = "UPDATE carrito_detalle
+            SET cantidad = cantidad + $cantidad
             WHERE id_carrito = $id_carrito AND id_producto = $id_producto";
 } else {
     $sql = "INSERT INTO carrito_detalle (id_carrito, id_producto, cantidad)
@@ -38,6 +41,7 @@ if (mysqli_num_rows($resultado_producto) > 0) {
 }
 
 mysqli_query($conexion, $sql);
+mysqli_close($conexion);
 
 echo "<script>alert('Producto agregado al carrito'); window.location='catalogo.php';</script>";
 ?>
